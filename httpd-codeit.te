@@ -1,0 +1,10 @@
+module httpd-codeit 1.0;
+
+require {
+	type httpd_t;
+	type zero_device_t;
+	class chr_file map;
+}
+
+#============ httpd_t =========
+allow httpd_t zero_device_t:chr_file map;
