@@ -251,22 +251,6 @@ getVersion(){
     if [[ -n "$VERSION" ]]; then
         NEW_VER="$(normalizeVersion "$VERSION")"
         return 4
-    else
-        VER="$(/usr/bin/v2ray/v2ray -version 2>/dev/null)"
-        RETVAL=$?
-        CUR_VER="$(normalizeVersion "$(echo "$VER" | head -n 1 | cut -d " " -f2)")"
-        TAG_URL="https://api.github.com/repos/v2ray/v2ray-core/releases/latest"
-        NEW_VER="$(normalizeVersion "$(curl ${PROXY} -H "Accept: application/json" -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0" -s "${TAG_URL}" --connect-timeout 10| grep 'tag_name' | cut -d\" -f4)")"
-
-        if [[ $? -ne 0 ]] || [[ $NEW_VER == "" ]]; then
-            colorEcho ${RED} "Failed to fetch release information. Please check your network or try again."
-            return 3
-        elif [[ $RETVAL -ne 0 ]];then
-            return 2
-        elif [[ $NEW_VER != $CUR_VER ]];then
-            return 1
-        fi
-        return 0
     fi
 }
 
