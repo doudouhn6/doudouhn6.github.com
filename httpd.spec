@@ -72,6 +72,7 @@ Patch22: httpd-2.4.43-mod_systemd.patch
 Patch23: httpd-2.4.43-export.patch
 Patch24: httpd-2.4.43-corelimit.patch
 Patch25: httpd-2.4.43-selinux.patch
+Patch26: httpd-2.4.46-systemd.patch
 Patch27: httpd-2.4.43-icons.patch
 Patch30: httpd-2.4.43-cachehardmax.patch
 Patch31: httpd-2.4.43-sslmultiproxy.patch
@@ -222,7 +223,7 @@ interface for storing and accessing per-user session data.
 %setup -q
 %patch1 -p1 -b .apctl
 %patch2 -p1 -b .apxs
-#%patch3 -p1 -b .deplibs
+%patch3 -p1 -b .deplibs
 
 %patch19 -p1 -b .detectsystemd
 
@@ -231,6 +232,7 @@ interface for storing and accessing per-user session data.
 %patch23 -p1 -b .export
 %patch24 -p1 -b .corelimit
 %patch25 -p1 -b .selinux
+%patch26 -p1 -b .systemd
 %patch27 -p1 -b .icons
 %patch30 -p1 -b .cachehardmax
 %patch31 -p1 -b .sslmultiproxy
