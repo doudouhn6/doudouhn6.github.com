@@ -72,7 +72,6 @@ Patch22: httpd-2.4.43-mod_systemd.patch
 Patch23: httpd-2.4.43-export.patch
 Patch24: httpd-2.4.43-corelimit.patch
 Patch25: httpd-2.4.43-selinux.patch
-Patch26: httpd-2.4.43-gettid.patch
 Patch27: httpd-2.4.43-icons.patch
 Patch30: httpd-2.4.43-cachehardmax.patch
 Patch31: httpd-2.4.43-sslmultiproxy.patch
@@ -83,7 +82,6 @@ Patch40: httpd-2.4.43-r1861269.patch
 Patch41: httpd-2.4.43-r1861793+.patch
 Patch42: httpd-2.4.43-r1828172+.patch
 Patch43: httpd-2.4.43-sslcoalesce.patch
-Patch44: httpd-2.4.46-lua-resume.patch
 
 # Bug fixes
 # https://bugzilla.redhat.com/show_bug.cgi?id=1397243
@@ -233,10 +231,9 @@ interface for storing and accessing per-user session data.
 %patch23 -p1 -b .export
 %patch24 -p1 -b .corelimit
 %patch25 -p1 -b .selinux
-#%patch26 -p1 -b .gettid
 %patch27 -p1 -b .icons
 %patch30 -p1 -b .cachehardmax
-#patch31 -p1 -b .sslmultiproxy
+%patch31 -p1 -b .sslmultiproxy
 %patch34 -p1 -b .socketactivation
 %patch38 -p1 -b .sslciphdefault
 %patch39 -p1 -b .sslprotdefault
@@ -244,7 +241,6 @@ interface for storing and accessing per-user session data.
 %patch41 -p1 -b .r1861793+
 %patch42 -p1 -b .r1828172+
 %patch43 -p1 -b .sslcoalesce
-%patch44 -p1 -b .lua-resume
 
 %patch60 -p1 -b .enable-sslv3
 %patch62 -p1 -b .r1870095
