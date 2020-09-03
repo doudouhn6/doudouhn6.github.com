@@ -244,7 +244,7 @@ interface for storing and accessing per-user session data.
 %patch41 -p1 -b .r1861793+
 %patch42 -p1 -b .r1828172+
 %patch43 -p1 -b .sslcoalesce
-%patch44 -p1 -b .luaresume
+%patch44 -p1 -b .lua-resume
 
 %patch60 -p1 -b .enable-sslv3
 %patch62 -p1 -b .r1870095
