@@ -221,11 +221,11 @@ interface for storing and accessing per-user session data.
 
 %prep
 %setup -q
-%patch1 -p1 -b .apctl
-%patch2 -p1 -b .apxs
-%patch3 -p1 -b .deplibs
+#%patch1 -p1 -b .apctl
+#%patch2 -p1 -b .apxs
+#%patch3 -p1 -b .deplibs
 
-#%patch19 -p1 -b .detectsystemd
+%patch19 -p1 -b .detectsystemd
 
 %patch21 -p1 -b .r1842929+
 %patch22 -p1 -b .mod_systemd
