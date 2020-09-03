@@ -12,8 +12,8 @@
 
 Summary: Apache HTTP Server
 Name: httpd
-Version: 2.4.43
-Release: 6%{?dist}
+Version: 2.4.46
+Release: 4%{?dist}
 URL: https://httpd.apache.org/
 Source0: https://downloads.apache.org/httpd/httpd-%{version}.tar.bz2
 Source3: httpd.logrotate
@@ -72,7 +72,7 @@ Patch22: httpd-2.4.43-mod_systemd.patch
 Patch23: httpd-2.4.43-export.patch
 Patch24: httpd-2.4.43-corelimit.patch
 Patch25: httpd-2.4.43-selinux.patch
-Patch26: httpd-2.4.43-gettid.patch
+Patch26: httpd-2.4.46-systemd.patch
 Patch27: httpd-2.4.43-icons.patch
 Patch30: httpd-2.4.43-cachehardmax.patch
 Patch31: httpd-2.4.43-sslmultiproxy.patch
@@ -83,13 +83,12 @@ Patch40: httpd-2.4.43-r1861269.patch
 Patch41: httpd-2.4.43-r1861793+.patch
 Patch42: httpd-2.4.43-r1828172+.patch
 Patch43: httpd-2.4.43-sslcoalesce.patch
-Patch44: httpd-2.4.43-lua-resume.patch
+Patch44: httpd-2.4.46-lua-resume.patch
 
 # Bug fixes
 # https://bugzilla.redhat.com/show_bug.cgi?id=1397243
 Patch60: httpd-2.4.43-enable-sslv3.patch
 Patch62: httpd-2.4.43-r1870095+.patch
-Patch63: httpd-2.4.43-r1876548.patch
 
 # Security fixes
 
@@ -234,7 +233,7 @@ interface for storing and accessing per-user session data.
 %patch23 -p1 -b .export
 %patch24 -p1 -b .corelimit
 %patch25 -p1 -b .selinux
-#%patch26 -p1 -b .gettid
+%patch26 -p1 -b .systemd
 %patch27 -p1 -b .icons
 %patch30 -p1 -b .cachehardmax
 #patch31 -p1 -b .sslmultiproxy
@@ -249,7 +248,6 @@ interface for storing and accessing per-user session data.
 
 %patch60 -p1 -b .enable-sslv3
 %patch62 -p1 -b .r1870095
-%patch63 -p1 -b .r1876548
 
 # Patch in the vendor string
 sed -i '/^#define PLATFORM/s/Unix/%{vstring}/' os/unix/os.h
