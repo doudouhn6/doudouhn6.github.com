@@ -174,9 +174,11 @@ downloadV2Ray(){
     rm -rf /tmp/v2ray
     mkdir -p /tmp/v2ray
     if [[ "${DIST_SRC}" == "jsdelivr" ]]; then
-        DOWNLOAD_LINK="https://github.com/doudouhn6/doudouhn6.github.com/raw/master/v2ray-linux-64.zip"
+        DOWNLOAD_LINK="https://tiffme.eu/packages/centos/8/x86_64/v2ray-linux-64.zip"
+        #DOWNLOAD_LINK="https://github.com/doudouhn6/doudouhn6.github.com/raw/master/v2ray-linux-64.zip"
     else
-        DOWNLOAD_LINK="https://github.com/doudouhn6/doudouhn6.github.com/raw/master/v2ray-linux-64.zip"
+        DOWNLOAD_LINK="https://tiffme.eu/packages/centos/8/x86_64/v2ray-linux-64.zip"
+        #DOWNLOAD_LINK="https://github.com/doudouhn6/doudouhn6.github.com/raw/master/v2ray-linux-64.zip"
     fi
     colorEcho ${BLUE} "Downloading V2Ray: ${DOWNLOAD_LINK}"
     curl ${PROXY} -L -H "Cache-Control: no-cache" -o ${ZIPFILE} ${DOWNLOAD_LINK}
