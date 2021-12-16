@@ -1,0 +1,8 @@
+# miraclelinux-highavailability.repo
+
+[8-latest-HighAvailability]
+name=8-latest-HighAvailability
+mirrorlist=https://repo.dist.miraclelinux.net/miraclelinux/mirrorlist/$releasever/$basearch/highavailability
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY
