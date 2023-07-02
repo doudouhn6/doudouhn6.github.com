@@ -234,7 +234,7 @@ get_version() {
   fi
   # Get V2Ray release version number
   TMP_FILE="$(mktemp)"
-  RELEASE_LATEST="5.10.0"
+  RELEASE_LATEST="5.7.0"
   "rm" "$TMP_FILE"
   RELEASE_VERSION="v${RELEASE_LATEST#v}"
   # Compare V2Ray version numbers
