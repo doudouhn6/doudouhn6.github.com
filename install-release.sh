@@ -254,6 +254,7 @@ get_version() {
     #echo "error: Failed to get release list, GitHub API response code: $HTTP_STATUS_CODE"
     #exit 1
   #fi
+  #RELEASE_LATEST="$(sed 'y/,/\n/' "$TMP_FILE" | grep 'tag_name' | awk -F '"' '{print $4}')"
   RELEASE_LATEST="5.19.0"
   "rm" "$TMP_FILE"
   RELEASE_VERSION="v${RELEASE_LATEST#v}"
